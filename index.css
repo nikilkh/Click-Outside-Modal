@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: cyan;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2px;
+    min-width: 200px;
+    max-width: fit-content;
+
+}
+
+.modal-outer {
+    background-color: hsla(hue, saturation, lightness, alpha);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+
+}
+
+.modal-inner {
+    min-width: 400px;
+    min-height: 400px;
+    background-color: white;
+    padding: 1rem;
+    transform: translateY(-200%);
+    transition: transform 2s;
+}
+
+.modal-outer.open {
+    opacity: 1;
+    pointer-events: all; 
+}
+
+.modal-outer.open .modal-inner {
+transform: translateY(0)
+}
+
+.modal-inner img {
+    width: 100%;
+}
